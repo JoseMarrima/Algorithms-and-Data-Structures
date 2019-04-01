@@ -101,6 +101,17 @@ void printRecursionReverse(node* temp) {
     printf("%d ", temp->data);
 }
 
+void reverseRecursion(node* temp) {
+    if(temp->next == NULL) {
+        head = temp;
+        return;
+    }
+    reverseRecursion(temp->next);
+    node* prev = temp->next;
+    prev->next = temp;
+    temp->next = NULL;
+}
+
 int main() {
    insertAtHead(23);
    insertAtTail(90);
