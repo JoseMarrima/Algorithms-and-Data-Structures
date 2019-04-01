@@ -70,6 +70,19 @@ void print() {
     printf("\n");
 }
 
+void reverseIterative() {
+  node* curr = head;
+  node* next = NULL;
+  node* prev = NULL;
+  while(curr != NULL) {
+    next = curr->next;
+    curr->next = prev;
+    prev = curr;
+    curr = next;
+  }
+  head = prev;
+}
+
 int main() {
    insertAtHead(23);
    insertAtTail(90);
