@@ -83,6 +83,24 @@ void reverseIterative() {
   head = prev;
 }
 
+void printRecursion(node* temp) {
+    if(temp == NULL) {
+        printf("\n");
+        return;
+    }
+    printf("%d ", temp->data);
+    printRecursion(temp->next);
+}
+
+void printRecursionReverse(node* temp) {
+    if(temp == NULL) {
+        //printf("\n");
+        return;
+    }
+    printRecursionReverse(temp->next);
+    printf("%d ", temp->data);
+}
+
 int main() {
    insertAtHead(23);
    insertAtTail(90);
