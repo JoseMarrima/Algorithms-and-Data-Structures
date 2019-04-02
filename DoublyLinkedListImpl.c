@@ -23,6 +23,7 @@ void insertAtHead(int data) {
         head = temp;
         return;
     }
+    head->prev = temp;
     temp->next = head;
     head = temp;
 }
